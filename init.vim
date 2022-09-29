@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'sheerun/vim-polyglot'
-Plug 'projekt0n/github-nvim-theme'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'xuyuanp/nerdtree-git-plugin'
@@ -155,7 +155,8 @@ map <leader>q gqip
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 " Color scheme (terminal)
-colorscheme github_dark_default
+let g:material_theme_style = 'ocean'
+colorscheme material
 "let g:lightline = {'colorscheme': 'github_dark_default'}
 set noshowmode
 " Set true colors
