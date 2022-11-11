@@ -17,7 +17,7 @@ mason_lspconfig.setup({
         "cssls",
         "html",
         "rust_analyzer",
-        "tsserver"
+        "tsserver",
     }
 })
 

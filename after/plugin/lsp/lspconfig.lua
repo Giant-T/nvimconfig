@@ -15,6 +15,7 @@ end
 
 local on_attach = function()
     nnoremap("gd", function() vim.lsp.buf.definition() end)
+    nnoremap("K", function () vim.lsp.buf.hover() end)
     nnoremap("[d", function() vim.diagnostic.goto_next() end)
     nnoremap("]d", function() vim.diagnostic.goto_prev() end)
     nnoremap("<leader>ga", function() vim.lsp.buf.code_action() end)
@@ -24,22 +25,32 @@ end
 -- used to enable autocompletion
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+-- Html config
 lspconfig["html"].setup({
     capabilities = capabilities,
     on_attach = on_attach
 })
 
+-- Css config
 lspconfig["cssls"].setup({
     capabilities = capabilities,
     on_attach = on_attach
 })
 
+-- Rust config
 lspconfig["rust_analyzer"].setup({
     capabilities = capabilities,
     on_attach = on_attach
 })
 
+-- Typescript config
 lspconfig["tsserver"].setup({
     capabilities = capabilities,
     on_attach = on_attach
 })
+
+-- Angular config
+-- lspconfig["angularls"].setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+-- })
