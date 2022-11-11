@@ -17,6 +17,7 @@ local on_attach = function()
     nnoremap("gd", function() vim.lsp.buf.definition() end)
     nnoremap("[d", function() vim.diagnostic.goto_next() end)
     nnoremap("]d", function() vim.diagnostic.goto_prev() end)
+    nnoremap("<leader>ga", function() vim.lsp.buf.code_action() end)
     nnoremap("<leader>rn", function() vim.lsp.buf.rename() end)
 end
 
