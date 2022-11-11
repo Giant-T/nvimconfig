@@ -5,6 +5,7 @@ if not status then
 end
 
 treesitter.setup({
+    prefer_git = true,
     hightlight = {
         enable = true
     },
