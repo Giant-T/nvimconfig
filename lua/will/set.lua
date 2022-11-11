@@ -19,4 +19,5 @@ vim.opt.wrap = false
 -- Clipboard
 vim.opt.clipboard:append("unnamedplus")
 
+-- Leader key
 vim.g.mapleader = " "

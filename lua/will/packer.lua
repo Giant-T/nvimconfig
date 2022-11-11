@@ -13,11 +13,24 @@ return require('packer').startup(function(use)
     -- Statusline
     use 'nvim-lualine/lualine.nvim'
 
+    -- Managing lsp servers
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+
+    -- Configuring lsp servers
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'onsails/lspkind.nvim'
+
     -- Fuzzy finding
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+
+    -- Autocompletion
+    use("hrsh7th/nvim-cmp") -- completion plugin
+    use("hrsh7th/cmp-buffer") -- source for text in buffer
 
     -- Theme
     use 'sainnhe/gruvbox-material'
