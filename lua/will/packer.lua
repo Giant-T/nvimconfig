@@ -6,5 +6,6 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use 'numToStr/Comment.nvim'
   use 'sainnhe/gruvbox-material'
 end)
