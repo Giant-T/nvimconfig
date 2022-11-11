@@ -32,6 +32,12 @@ return require('packer').startup(function(use)
     use("hrsh7th/nvim-cmp") -- completion plugin
     use("hrsh7th/cmp-buffer") -- source for text in buffer
 
+    -- TreeSitter
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate"
+    }
+
     -- Theme
     use 'sainnhe/gruvbox-material'
 end)
