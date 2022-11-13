@@ -4,10 +4,12 @@ if not status then
   return
 end
 
-treesitter.setup({
-    prefer_git = true,
-    hightlight = {
-        enable = true
+treesitter.setup {
+    sync_install = false,
+    highlight = {
+        enable = true,
+        -- disable = { "" },
+        additional_vim_regex_highlighting = false,
     },
     indent = { enable = true },
     ensure_installed = {
@@ -15,7 +17,10 @@ treesitter.setup({
         "html",
         "javascript",
         "typescript",
+        "tsx",
         "rust",
+        "lua"
     },
     auto_install = true
-})
+}
+

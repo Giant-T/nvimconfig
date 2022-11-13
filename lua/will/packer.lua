@@ -38,9 +38,12 @@ return require('packer').startup(function(use)
     -- TreeSitter
     use {
         "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate"
+        run = function()
+            require("nvim-treesitter.install").update({ with_sync = true })
+        end,
     }
 
-    -- Theme
+    -- Themes
     use 'sainnhe/gruvbox-material'
+    use { "catppuccin/nvim", as = "catppuccin" }
 end)
