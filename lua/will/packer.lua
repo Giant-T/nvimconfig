@@ -10,6 +10,9 @@ return require('packer').startup(function(use)
     -- Commenter
     use 'numToStr/Comment.nvim'
 
+    -- Formatter
+    use 'sbdchd/neoformat'
+
     -- Statusline
     use 'nvim-lualine/lualine.nvim'
 

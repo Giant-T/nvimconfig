@@ -12,3 +12,6 @@ nnoremap("<leader>h", "<C-w>h")
 nnoremap("<leader>j", "<C-w>j")
 nnoremap("<leader>k", "<C-w>k")
 nnoremap("<leader>l", "<C-w>l")
+
+-- Format file
+nnoremap("<SA-f>", "<cmd>Neoformat<CR>")
