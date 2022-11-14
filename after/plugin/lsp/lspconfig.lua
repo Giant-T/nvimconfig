@@ -18,8 +18,9 @@ local on_attach = function()
     nnoremap("K", function () vim.lsp.buf.hover() end)
     nnoremap("[d", function() vim.diagnostic.goto_next() end)
     nnoremap("]d", function() vim.diagnostic.goto_prev() end)
-    nnoremap("<leader>ga", function() vim.lsp.buf.code_action() end)
+    nnoremap("<leader>va", function() vim.lsp.buf.code_action() end)
     nnoremap("<leader>rn", function() vim.lsp.buf.rename() end)
+    nnoremap("<leader>vd", function() vim.diagnostic.open_float() end)
 end
 
 -- used to enable autocompletion
