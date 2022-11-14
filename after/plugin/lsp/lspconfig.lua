@@ -49,8 +49,8 @@ lspconfig["tsserver"].setup({
     on_attach = on_attach
 })
 
--- Angular config
--- lspconfig["angularls"].setup({
---     capabilities = capabilities,
---     on_attach = on_attach,
--- })
+-- PHP config
+lspconfig["intelephense"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+})

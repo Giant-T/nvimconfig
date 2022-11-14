@@ -19,7 +19,8 @@ treesitter.setup {
         "typescript",
         "tsx",
         "rust",
-        "lua"
+        "lua",
+        "php"
     },
     auto_install = true
 }
