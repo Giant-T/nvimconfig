@@ -54,3 +54,8 @@ lspconfig["intelephense"].setup({
     capabilities = capabilities,
     on_attach = on_attach
 })
+
+lspconfig["sumneko_lua"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+})

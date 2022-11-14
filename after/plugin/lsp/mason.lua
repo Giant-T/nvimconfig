@@ -18,7 +18,8 @@ mason_lspconfig.setup({
         "html",
         "rust_analyzer",
         "tsserver",
-        "intelephense"
+        "intelephense",
+        "sumneko_lua"
     }
 })
 
