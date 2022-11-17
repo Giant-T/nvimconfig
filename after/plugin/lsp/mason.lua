@@ -20,7 +20,6 @@ mason_lspconfig.setup({
         "tsserver",
         "intelephense",
         "sumneko_lua",
-        "angularls",
     }
 })
 

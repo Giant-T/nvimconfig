@@ -7,6 +7,8 @@ if not lspconfig_status then
   return
 end
 
+local root_pattern = require('lspconfig.util').root_pattern
+
 local on_attach = function()
     nnoremap("gd", function() vim.lsp.buf.definition() end)
     nnoremap("K", function () vim.lsp.buf.hover() end)
@@ -54,9 +56,3 @@ lspconfig["sumneko_lua"].setup({
     capabilities = capabilities,
     on_attach = on_attach
 })
-
-lspconfig["angularls"].setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
-
