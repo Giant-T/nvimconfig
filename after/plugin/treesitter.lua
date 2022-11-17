@@ -4,6 +4,13 @@ if not status then
   return
 end
 
+local install_status, treesitter_install = pcall(require, "nvim-treesitter.install")
+if not install_status then
+    return
+end
+
+treesitter_install.compilers = { "clang" }
+
 treesitter.setup {
     sync_install = false,
     highlight = {
