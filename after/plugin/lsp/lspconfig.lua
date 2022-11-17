@@ -7,12 +7,6 @@ if not lspconfig_status then
   return
 end
 
--- import cmp-nvim-lsp plugin safely
-local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not cmp_nvim_lsp_status then
-  return
-end
-
 local on_attach = function()
     nnoremap("gd", function() vim.lsp.buf.definition() end)
     nnoremap("K", function () vim.lsp.buf.hover() end)
@@ -59,5 +53,10 @@ lspconfig["intelephense"].setup({
 lspconfig["sumneko_lua"].setup({
     capabilities = capabilities,
     on_attach = on_attach
+})
+
+lspconfig["angularls"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
 })
 
