@@ -50,5 +50,6 @@ return require('packer').startup(function(use)
 
     -- Themes
     use 'sainnhe/gruvbox-material'
+    use 'folke/tokyonight.nvim'
     use { "catppuccin/nvim", as = "catppuccin" }
 end)
