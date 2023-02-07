@@ -1,17 +1,15 @@
-local nnoremap = require("will.keymap").nnoremap
-
 -- Goto files
-nnoremap("<leader>pv", "<cmd>Ex<CR>")
+vim.keymap.set("n", "<leader>pv", "<cmd>Ex<CR>")
 
 -- Splits
-nnoremap("<leader>vs", "<cmd>vs<CR>")
-nnoremap("<leader>hs", "<cmd>sp<CR>")
+vim.keymap.set("n", "<leader>vs", "<cmd>vs<CR>")
+vim.keymap.set("n", "<leader>hs", "<cmd>sp<CR>")
 
 -- Move through splits
-nnoremap("<leader>h", "<C-w>h")
-nnoremap("<leader>j", "<C-w>j")
-nnoremap("<leader>k", "<C-w>k")
-nnoremap("<leader>l", "<C-w>l")
+vim.keymap.set("n", "<leader>h", "<C-w>h")
+vim.keymap.set("n", "<leader>j", "<C-w>j")
+vim.keymap.set("n", "<leader>k", "<C-w>k")
+vim.keymap.set("n", "<leader>l", "<C-w>l")
 
 -- Format file
-nnoremap("<SA-f>", "<cmd>Neoformat<CR>")
+vim.keymap.set("n", "<SA-f>", "<cmd>Neoformat<CR>")

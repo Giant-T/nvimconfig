@@ -1,6 +1,3 @@
-local Remap = require("will.keymap")
-local nnoremap = Remap.nnoremap
-
 -- import lspconfig plugin safely
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status then
@@ -10,25 +7,25 @@ end
 local root_pattern = require("lspconfig.util").root_pattern
 
 local on_attach = function()
-	nnoremap("gd", function()
+	vim.keymap.set("n", "gd", function()
 		vim.lsp.buf.definition()
 	end)
-	nnoremap("K", function()
+	vim.keymap.set("n", "K", function()
 		vim.lsp.buf.hover()
 	end)
-	nnoremap("[d", function()
+	vim.keymap.set("n", "[d", function()
 		vim.diagnostic.goto_next()
 	end)
-	nnoremap("]d", function()
+	vim.keymap.set("n", "]d", function()
 		vim.diagnostic.goto_prev()
 	end)
-	nnoremap("<leader>va", function()
+	vim.keymap.set("n", "<leader>va", function()
 		vim.lsp.buf.code_action()
 	end)
-	nnoremap("<leader>rn", function()
+	vim.keymap.set("n", "<leader>rn", function()
 		vim.lsp.buf.rename()
 	end)
-	nnoremap("<leader>vd", function()
+	vim.keymap.set("n", "<leader>vd", function()
 		vim.diagnostic.open_float()
 	end)
 end
@@ -57,13 +54,7 @@ lspconfig["rust_analyzer"].setup({
 -- Typescript config
 lspconfig["tsserver"].setup({
 	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- PHP config
-lspconfig["intelephense"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
+    on_attach = on_attach,
 })
 
 lspconfig["sumneko_lua"].setup({
