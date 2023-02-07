@@ -1,26 +1,35 @@
-vim.opt.guicursor = ""
+-- Global variables
+local g = vim.g
+local opt = vim.opt
 
 -- Line numbers
-vim.opt.nu = true
-vim.opt.relativenumber = true
+opt.nu = true
+opt.relativenumber = true
 
 -- Tabs
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.smartindent = true
 
-vim.opt.smartindent = true
-
-vim.opt.wrap = false
-
--- Clipboard
-vim.opt.clipboard:append("unnamedplus")
+opt.wrap = false
 
 -- Leader key
-vim.g.mapleader = " "
+g.mapleader = " "
 
 -- Mouse settings
-vim.opt.mouse = "a"
+opt.colorcolumn = "80"
+
+-- Disable netrw banner
+g.netrw_banner = 0
+
+-- General
+opt.swapfile = false
+opt.hlsearch = false
+opt.incsearch = true
+opt.termguicolors = true
+
+-- UI
+opt.guicursor = ""
+opt.laststatus = 3
