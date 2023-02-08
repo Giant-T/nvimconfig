@@ -26,6 +26,7 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
+    -- LSP
 	use({
 		"VonHeikemen/lsp-zero.nvim",
 		requires = {
