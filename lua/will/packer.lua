@@ -7,23 +7,17 @@ return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
-	-- Commenter
-	use("numToStr/Comment.nvim")
-
-	-- Formatter
-	use("sbdchd/neoformat")
-
 	-- Statusline
 	use("nvim-lualine/lualine.nvim")
 
-	-- Managing lsp servers
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-
-	-- Configuring lsp servers
-	use("neovim/nvim-lspconfig")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("onsails/lspkind.nvim")
+	-- General plugins
+	use("theprimeagen/harpoon")
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			require("nvim-treesitter.install").update({ with_sync = true })
+		end,
+	})
 
 	-- Fuzzy finding
 	use({
@@ -32,21 +26,25 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	-- Autocompletion
-	use("hrsh7th/nvim-cmp") -- completion plugin
-	use("hrsh7th/cmp-buffer") -- source for text in buffer
-
-	-- Snippets
-	use("L3MON4D3/LuaSnip") -- snippet engine
-	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
-	use("rafamadriz/friendly-snippets") -- useful snippets
-
-	-- TreeSitter
 	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			require("nvim-treesitter.install").update({ with_sync = true })
-		end,
+		"VonHeikemen/lsp-zero.nvim",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" },
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
+
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "onsails/lspkind.nvim" },
+			{ "hrsh7th/cmp-buffer" },
+
+			-- Snippets
+			{ "L3MON4D3/LuaSnip" }, -- snippet engine
+			{ "saadparwaiz1/cmp_luasnip" }, -- for autocompletion
+			{ "rafamadriz/friendly-snippets" }, -- useful snippets
+		},
 	})
 
 	-- Themes

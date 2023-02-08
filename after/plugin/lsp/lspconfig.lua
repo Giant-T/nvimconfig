@@ -1,63 +1,48 @@
--- import lspconfig plugin safely
-local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status then
-	return
-end
+local keymap = vim.keymap
+local lsp = require("lsp-zero")
 
-local root_pattern = require("lspconfig.util").root_pattern
+lsp.preset("recommended")
 
-local on_attach = function()
-	vim.keymap.set("n", "gd", function()
+lsp.ensure_installed({
+	"tsserver",
+	"eslint",
+	"sumneko_lua",
+	"rust_analyzer",
+	"cssls",
+	"html",
+})
+
+local cmp = require("cmp")
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
+local cmp_mappings = lsp.defaults.cmp_mappings({
+	["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+	["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+	["<CR>"] = cmp.mapping.complete(),
+})
+
+lsp.set_preferences({
+	sign_icons = {},
+})
+
+lsp.setup_nvim_cmp({
+	mapping = cmp_mappings,
+})
+
+lsp.on_attach(function(client, bufnr)
+	local opts = { buffer = bufnr, remap = false }
+
+	keymap.set("n", "gd", function()
 		vim.lsp.buf.definition()
-	end)
-	vim.keymap.set("n", "K", function()
+	end, opts)
+	keymap.set("n", "K", function()
 		vim.lsp.buf.hover()
-	end)
-	vim.keymap.set("n", "[d", function()
-		vim.diagnostic.goto_next()
-	end)
-	vim.keymap.set("n", "]d", function()
-		vim.diagnostic.goto_prev()
-	end)
-	vim.keymap.set("n", "<leader>va", function()
-		vim.lsp.buf.code_action()
-	end)
-	vim.keymap.set("n", "<leader>rn", function()
-		vim.lsp.buf.rename()
-	end)
-	vim.keymap.set("n", "<leader>vd", function()
+	end, opts)
+	keymap.set("n", "<leader>vd", function()
 		vim.diagnostic.open_float()
-	end)
-end
+	end, opts)
+	keymap.set("n", "<leader>va", function()
+        vim.lsp.buf.code_action()
+    end, opts)
+end)
 
--- used to enable autocompletion
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
--- Html config
-lspconfig["html"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- Css config
-lspconfig["cssls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- Rust config
-lspconfig["rust_analyzer"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- Typescript config
-lspconfig["tsserver"].setup({
-	capabilities = capabilities,
-    on_attach = on_attach,
-})
-
-lspconfig["sumneko_lua"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+lsp.setup()

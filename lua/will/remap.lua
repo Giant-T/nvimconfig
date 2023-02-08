@@ -11,5 +11,3 @@ vim.keymap.set("n", "<leader>j", "<C-w>j")
 vim.keymap.set("n", "<leader>k", "<C-w>k")
 vim.keymap.set("n", "<leader>l", "<C-w>l")
 
--- Format file
-vim.keymap.set("n", "<SA-f>", "<cmd>Neoformat<CR>")
