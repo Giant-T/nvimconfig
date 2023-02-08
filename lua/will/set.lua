@@ -29,6 +29,7 @@ opt.swapfile = false
 opt.hlsearch = false
 opt.incsearch = true
 opt.termguicolors = true
+opt.scrolloff = 8
 
 -- UI
 opt.guicursor = ""

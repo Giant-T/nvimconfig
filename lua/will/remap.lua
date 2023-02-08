@@ -17,3 +17,15 @@ vim.keymap.set("n", "<A-k>", "<cmd>m-2<CR>==")
 vim.keymap.set("i", "<A-j>", "<cmd>m+<CR>")
 vim.keymap.set("i", "<A-k>", "<cmd>m-2<CR>")
 
+-- Recenter on move down and up
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Yankadank
+vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("v", "<leader>y", "\"+y")
+
+-- Format
+vim.keymap.set("n", "<A-F>", function()
+    vim.lsp.buf.format()
+end)
