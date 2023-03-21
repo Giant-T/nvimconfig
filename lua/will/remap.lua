@@ -29,3 +29,4 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<A-F>", function()
     vim.lsp.buf.format()
 end)
+

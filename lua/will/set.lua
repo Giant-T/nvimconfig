@@ -34,3 +34,6 @@ opt.scrolloff = 8
 -- UI
 opt.guicursor = ""
 opt.laststatus = 3
+
+vim.o.hidden = true
+
