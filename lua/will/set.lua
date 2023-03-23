@@ -37,3 +37,7 @@ opt.laststatus = 3
 
 vim.o.hidden = true
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "typescript",
+    command = "setlocal shiftwidth=2 tabstop=2"
+})
