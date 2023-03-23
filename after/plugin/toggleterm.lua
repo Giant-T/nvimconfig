@@ -1,6 +1,6 @@
 require("toggleterm").setup({
-    size = 20,
-    shell = "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoLogo",
+    size = 10,
+    shell = 'C:\\"Program Files"\\PowerShell\\7\\pwsh.exe -nol',
 })
 
 function _G.set_terminal_keymaps()
