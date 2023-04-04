@@ -31,12 +31,21 @@ require("gruvbox").setup({
 })
 
 function SetColors(color)
-    color = color or "gruvbox"
+    color = color or "gruvbox-material"
+
+    if color == "gruvbox-material" then
+        SetupGruvboxMaterial()
+    end
 
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+end
+
+function SetupGruvboxMaterial()
+    vim.g.gruvbox_material_transparent_background = 1
+    vim.g.gruvbox_material_visual = "reverse"
 end
 
 SetColors()
