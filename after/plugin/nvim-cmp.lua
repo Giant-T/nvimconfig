@@ -1,19 +1,19 @@
 -- import nvim-cmp plugin safely
 local cmp_status, cmp = pcall(require, "cmp")
 if not cmp_status then
-  return
+    return
 end
 
 -- import luasnip plugin safely
 local luasnip_status, luasnip = pcall(require, "luasnip")
 if not luasnip_status then
-  return
+    return
 end
 
 -- import lspkind plugin safely
 local lspkind_status, lspkind = pcall(require, "lspkind")
 if not lspkind_status then
-  return
+    return
 end
 
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
@@ -28,8 +28,8 @@ cmp.setup({
         end,
     },
     window = {
-        documentation = cmp.config.window.bordered(),
-        completion = cmp.config.window.bordered()
+        documentation = cmp.config.window.bordered({ border = { "⁕", "─", "⁕", "│", "⁕", "─", "⁕", "│" } }),
+        completion = cmp.config.window.bordered({ border = { "⁕", "─", "⁕", "│", "⁕", "─", "⁕", "│" } })
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
@@ -52,4 +52,3 @@ cmp.setup({
         }),
     },
 })
-
