@@ -52,7 +52,7 @@ return require("packer").startup(function(use)
     use({ "akinsho/toggleterm.nvim", tag = '*' })
 
     -- Themes
-    use("sainnhe/gruvbox-material")
+    use("ellisonleao/gruvbox.nvim")
     use("folke/tokyonight.nvim")
     use({ "rose-pine/neovim", as = "rose-pine" })
     use({ "catppuccin/nvim", as = "catppuccin" })
