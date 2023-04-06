@@ -1,5 +1,1 @@
-require("Comment").setup({
-    toggler = {
-        line = "<C-/>"
-    }
-})
+require("Comment").setup({})
