@@ -46,6 +46,8 @@ function SetColors(color)
         SetupGruvboxMaterial()
     end
 
+    vim.cmd([[autocmd! ColorScheme * highlight FloatBorder guibg=none]])
+
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
