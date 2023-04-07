@@ -34,6 +34,7 @@ require("gruvbox").setup({
 
 -- Grubox material setup
 function SetupGruvboxMaterial()
+    vim.g.gruvbox_material_foreground = "mix"
     vim.g.gruvbox_material_transparent_background = 1
     vim.g.gruvbox_material_visual = "reverse"
     vim.g.gruvbox_material_diagnostic_virtual_text = "grey"
