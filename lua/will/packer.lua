@@ -51,6 +51,9 @@ return require("packer").startup(function(use)
     -- Terminal inside neovim
     use({ "akinsho/toggleterm.nvim", tag = '*' })
 
+    -- Commenter
+    use("numToStr/Comment.nvim")
+
     -- Themes
     use("ellisonleao/gruvbox.nvim")
     use("sainnhe/gruvbox-material")

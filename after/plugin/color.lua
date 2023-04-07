@@ -1,3 +1,4 @@
+-- Rose pine setup
 require("rose-pine").setup({
     --variant = 'main',
     disable_italics = true,
@@ -9,6 +10,7 @@ require("rose-pine").setup({
     }
 })
 
+-- Classic gruvbox setup
 require("gruvbox").setup({
     bold = false,
     italic = {
@@ -30,6 +32,13 @@ require("gruvbox").setup({
     }
 })
 
+-- Grubox material setup
+function SetupGruvboxMaterial()
+    vim.g.gruvbox_material_transparent_background = 1
+    vim.g.gruvbox_material_visual = "reverse"
+    vim.g.gruvbox_material_diagnostic_virtual_text = "grey"
+end
+
 function SetColors(color)
     color = color or "gruvbox-material"
 
@@ -41,12 +50,6 @@ function SetColors(color)
 
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
-
-function SetupGruvboxMaterial()
-    vim.g.gruvbox_material_transparent_background = 1
-    vim.g.gruvbox_material_visual = "reverse"
-    vim.g.gruvbox_material_diagnostic_virtual_text = "grey"
 end
 
 SetColors()
