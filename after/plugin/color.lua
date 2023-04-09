@@ -38,6 +38,7 @@ function SetupGruvboxMaterial()
     vim.g.gruvbox_material_transparent_background = 1
     vim.g.gruvbox_material_visual = "reverse"
     vim.g.gruvbox_material_diagnostic_virtual_text = "grey"
+    vim.g.gruvbox_material_disable_italic_comment = 1
 end
 
 function SetColors(color)
