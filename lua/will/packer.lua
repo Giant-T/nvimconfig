@@ -77,7 +77,7 @@ return require("packer").startup(function(use)
                     }, --your header
                     center = {
                         {
-                            icon = ' ',
+                            icon = '󰍉 ',
                             icon_hl = 'Title',
                             desc = 'Find File           ',
                             desc_hl = 'String',
@@ -87,7 +87,7 @@ return require("packer").startup(function(use)
                             action = 'Telescope find_files'
                         },
                         {
-                            icon = ' ',
+                            icon = '󰃃 ',
                             icon_hl = 'Title',
                             desc = 'Lookup Marks           ',
                             desc_hl = 'String',
@@ -97,7 +97,7 @@ return require("packer").startup(function(use)
                             action = 'lua require("harpoon.ui").toggle_quick_menu()'
                         },
                         {
-                            icon = ' ',
+                            icon = '󰋚 ',
                             icon_hl = 'Title',
                             desc = 'Recent Files           ',
                             desc_hl = 'String',
@@ -106,7 +106,7 @@ return require("packer").startup(function(use)
                             action = 'Telescope oldfiles'
                         },
                         {
-                            icon = ' ',
+                            icon = '󰑐 ',
                             icon_hl = 'Title',
                             desc = 'Update Plugins           ',
                             desc_hl = 'String',
