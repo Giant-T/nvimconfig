@@ -3,7 +3,6 @@ require("rose-pine").setup({
     --variant = 'main',
     disable_italics = true,
     disable_background = true,
-
     -- Change of vim specific highlight groups
     highlight_groups = {
         Visual = { bg = 'rose', fg = 'base' }
@@ -17,14 +16,11 @@ require("gruvbox").setup({
         strings = false,
         comments = false,
     },
-
     invert_selection = true,
     inverse = false,
-
     transparent_mode = true,
     dim_inactive = true,
     contrast = "soft",
-
     -- Override de couleur
     palette_overrides = {
         dark0 = "#191724",
