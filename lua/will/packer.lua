@@ -27,6 +27,16 @@ return require("packer").startup(function(use)
         requires = { { "nvim-lua/plenary.nvim" } },
     })
 
+    -- File manager
+    use("lambdalisue/fern.vim")
+    use("lambdalisue/fern-hijack.vim")
+    use({
+        "lambdalisue/fern-renderer-nerdfont.vim",
+        requires = {
+            { "lambdalisue/nerdfont.vim" },
+        },
+    })
+
     -- LSP
     use({
         "VonHeikemen/lsp-zero.nvim",
@@ -123,6 +133,7 @@ return require("packer").startup(function(use)
 
     -- Themes
     use("ellisonleao/gruvbox.nvim")
+    use("alexvzyl/nordic.nvim")
     use("sainnhe/gruvbox-material")
     use("folke/tokyonight.nvim")
     use({ "rose-pine/neovim", as = "rose-pine" })

@@ -28,6 +28,21 @@ require("gruvbox").setup({
     }
 })
 
+require("nordic").setup({
+    theme = "nordic",
+    italic_comments = false,
+    transparent_bg = true,
+    bright_border = false,
+
+    nordic = {
+        reduced_blue = true,
+    },
+
+    telescope = {
+        style = 'flat',
+    },
+})
+
 -- Grubox material setup
 function SetupGruvboxMaterial()
     vim.g.gruvbox_material_foreground = "mix"
@@ -38,7 +53,7 @@ function SetupGruvboxMaterial()
 end
 
 function SetColors(color)
-    color = color or "gruvbox-material"
+    color = color or "nordic"
 
     if color == "gruvbox-material" then
         SetupGruvboxMaterial()

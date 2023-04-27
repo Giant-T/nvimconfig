@@ -21,8 +21,10 @@ g.mapleader = " "
 -- Mouse settings
 opt.colorcolumn = "80"
 
--- Disable netrw banner
+-- netrw settings
 g.netrw_banner = 0
+g.netrw_liststyle = 3
+g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
 
 -- General
 opt.swapfile = false

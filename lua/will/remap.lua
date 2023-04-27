@@ -1,5 +1,5 @@
 -- Goto files
-vim.keymap.set("n", "<leader>pv", "<cmd>Ex<CR>")
+vim.keymap.set("n", "<leader>pv", "<cmd>Fern . -reveal=%<CR>")
 
 -- Splits
 vim.keymap.set("n", "<leader>vs", "<cmd>vs<CR>")
