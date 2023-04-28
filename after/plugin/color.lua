@@ -33,6 +33,7 @@ require("nordic").setup({
     italic_comments = false,
     transparent_bg = true,
     bright_border = false,
+    bold_keywords = false,
 
     nordic = {
         reduced_blue = true,
