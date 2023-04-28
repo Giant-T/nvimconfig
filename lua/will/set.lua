@@ -37,6 +37,7 @@ g.editorconfig = true
 -- UI
 opt.guicursor = ""
 opt.laststatus = 3
+opt.showmode = false
 
 vim.o.hidden = true
 
