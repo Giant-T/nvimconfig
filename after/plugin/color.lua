@@ -54,7 +54,7 @@ function SetupGruvboxMaterial()
 end
 
 function SetColors(color)
-    color = color or "nordic"
+    color = color or "gruvbox-material"
 
     if color == "gruvbox-material" then
         SetupGruvboxMaterial()
