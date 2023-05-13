@@ -45,6 +45,9 @@ require("nordic").setup({
         ['@variable.builtin'] = {
             italic = false
         },
+        ['@namespace'] = {
+            italic = false
+        },
     },
 
     nordic = {
