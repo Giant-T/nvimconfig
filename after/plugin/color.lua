@@ -35,6 +35,18 @@ require("nordic").setup({
     bright_border = false,
     bold_keywords = false,
 
+    override = {
+        ['@parameter'] = {
+            italic = false
+        },
+        ['@text.emphasis'] = {
+            italic = false
+        },
+        ['@variable.builtin'] = {
+            italic = false
+        },
+    },
+
     nordic = {
         reduced_blue = true,
     },
@@ -54,7 +66,7 @@ function SetupGruvboxMaterial()
 end
 
 function SetColors(color)
-    color = color or "gruvbox-material"
+    color = color or "nordic"
 
     if color == "gruvbox-material" then
         SetupGruvboxMaterial()
