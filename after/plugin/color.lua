@@ -1,5 +1,5 @@
 -- Rose pine setup
-require("rose-pine").setup({
+--[[ require("rose-pine").setup({
     --variant = 'main',
     disable_italics = true,
     disable_background = true,
@@ -7,10 +7,9 @@ require("rose-pine").setup({
     highlight_groups = {
         Visual = { bg = 'rose', fg = 'base' }
     }
-})
-
+}) ]]
 -- Classic gruvbox setup
-require("gruvbox").setup({
+--[[ require("gruvbox").setup({
     bold = false,
     italic = {
         strings = false,
@@ -26,9 +25,65 @@ require("gruvbox").setup({
         dark0 = "#191724",
         dark1 = "#191724",
     }
+}) ]]
+require 'mellifluous'.setup({
+    dim_inactive = false,
+
+    mellifluous = {
+        color_overrides = {
+            dark = {
+                comments = '#575757',
+            },
+        },
+    },
+
+    color_set = 'mellifluous',
+    styles = {
+        -- see :h attr-list for options. set {} for NONE, { option = true } for option
+        comments = { italic = false, },
+        conditionals = {},
+        folds = {},
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+    },
+    transparent_background = {
+        enabled = true,
+        floating_windows = true,
+        telescope = true,
+        file_tree = true,
+        cursor_line = true,
+        status_line = true,
+    },
+    flat_background = {
+        line_numbers = false,
+        floating_windows = false,
+        file_tree = false,
+        cursor_line_number = true,
+    },
+    plugins = {
+        cmp = true,
+        gitsigns = false,
+        indent_blankline = false,
+        nvim_tree = {
+            enabled = true,
+            show_root = false,
+        },
+        telescope = {
+            enabled = true,
+            nvchad_like = true,
+        },
+    },
 })
 
-require("nordic").setup({
+--[[ require("nordic").setup({
     theme = "nordic",
     italic_comments = false,
     transparent_bg = true,
@@ -57,8 +112,7 @@ require("nordic").setup({
     telescope = {
         style = 'flat',
     },
-})
-
+}) ]]
 -- Grubox material setup
 function SetupGruvboxMaterial()
     vim.g.gruvbox_material_foreground = "mix"
@@ -69,7 +123,7 @@ function SetupGruvboxMaterial()
 end
 
 function SetColors(color)
-    color = color or "nordic"
+    color = color or "mellifluous"
 
     if color == "gruvbox-material" then
         SetupGruvboxMaterial()

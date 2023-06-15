@@ -31,7 +31,7 @@ opt.swapfile = false
 opt.hlsearch = false
 opt.incsearch = true
 opt.termguicolors = true
-opt.scrolloff = 8
+opt.scrolloff = 10
 opt.autoread = true
 g.editorconfig = true
 

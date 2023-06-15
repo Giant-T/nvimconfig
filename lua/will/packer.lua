@@ -131,6 +131,7 @@ return require("packer").startup(function(use)
     })
 
     -- Themes
+    use("ramojus/mellifluous.nvim")
     use("ellisonleao/gruvbox.nvim")
     use("alexvzyl/nordic.nvim")
     use("sainnhe/gruvbox-material")
