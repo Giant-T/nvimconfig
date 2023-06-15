@@ -78,5 +78,3 @@ end
 lsp.on_attach(on_attach)
 
 lsp.setup()
-
-local lspconfig = require("lspconfig")

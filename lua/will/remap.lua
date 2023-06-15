@@ -25,6 +25,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("v", "<leader>y", "\"+y")
 
+vim.keymap.set("v", "K", "<Nop>")
+
 -- Format
 vim.keymap.set("n", "<A-F>", function()
     vim.lsp.buf.format()
