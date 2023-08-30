@@ -20,6 +20,7 @@ lsp.ensure_installed({
     "rust_analyzer",
     "cssls",
     "html",
+    "clangd",
 })
 
 local cmp = require("cmp")

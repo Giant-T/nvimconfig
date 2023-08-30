@@ -83,7 +83,7 @@ require 'mellifluous'.setup({
     },
 })
 
---[[ require("nordic").setup({
+require("nordic").setup({
     theme = "nordic",
     italic_comments = false,
     transparent_bg = true,
@@ -112,7 +112,8 @@ require 'mellifluous'.setup({
     telescope = {
         style = 'flat',
     },
-}) ]]
+})
+
 -- Grubox material setup
 function SetupGruvboxMaterial()
     vim.g.gruvbox_material_foreground = "mix"
