@@ -41,12 +41,3 @@ opt.laststatus = 3
 opt.showmode = false
 
 vim.o.hidden = true
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "typescript",
-    command = "setlocal shiftwidth=2 tabstop=2"
-})
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "typescriptreact",
-    command = "setlocal shiftwidth=2 tabstop=2"
-})
