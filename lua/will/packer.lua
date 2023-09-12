@@ -60,6 +60,9 @@ return require("packer").startup(function(use)
         },
     })
 
+    -- LaTeX
+    use("lervag/vimtex")
+
     -- Commenter
     use("numToStr/Comment.nvim")
 
