@@ -18,8 +18,8 @@ return require("packer").startup(function(use)
             require("nvim-treesitter.install").update({ with_sync = true })
         end,
     })
-    use("nvim-treesitter/nvim-treesitter-context")
-    use("nvim-treesitter/playground")
+    -- use("nvim-treesitter/nvim-treesitter-context")
+    -- use("nvim-treesitter/playground")
 
     -- Fuzzy finding
     use({
