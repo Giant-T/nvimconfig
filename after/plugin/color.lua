@@ -70,7 +70,7 @@ require 'mellifluous'.setup({
     },
     plugins = {
         cmp = true,
-        gitsigns = false,
+        gitsigns = true,
         indent_blankline = false,
         nvim_tree = {
             enabled = true,
