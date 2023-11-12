@@ -69,4 +69,14 @@ end
 
 lsp.on_attach(on_attach)
 
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {
+        "rust_analyzer",
+    },
+  handlers = {
+    lsp.default_setup,
+  },
+})
+
 lsp.setup()
