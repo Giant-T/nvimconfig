@@ -9,8 +9,6 @@ if not install_status then
     return
 end
 
-treesitter_install.compilers = { "clang" }
-
 treesitter.setup {
     sync_install = false,
     highlight = {
@@ -23,7 +21,6 @@ treesitter.setup {
         "html",
         "javascript",
         "typescript",
-        "tsx",
         "rust",
         "cpp",
         "lua",

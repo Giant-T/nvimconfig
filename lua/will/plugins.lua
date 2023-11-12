@@ -1,47 +1,46 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
--- Only required if you have packer configured as `opt`
-vim.cmd([[packadd packer.nvim]])
 
-return require("packer").startup(function(use)
-    -- Packer can manage itself
-    use("wbthomason/packer.nvim")
-
+require("lazy").setup({
     -- Statusline
-    use("nvim-lualine/lualine.nvim")
+    {"nvim-lualine/lualine.nvim", lazy = false},
 
     -- General plugins
-    use("theprimeagen/harpoon")
-    use({
+    {"theprimeagen/harpoon", lazy = false},
+    {
         "nvim-treesitter/nvim-treesitter",
-        run = function()
+        lazy = false,
+        build = function()
             require("nvim-treesitter.install").update({ with_sync = true })
         end,
-    })
-    -- use("nvim-treesitter/nvim-treesitter-context")
-    -- use("nvim-treesitter/playground")
+    },
+    -- {"nvim-treesitter/nvim-treesitter-context"}
+    -- {"nvim-treesitter/playground"}
 
     -- Fuzzy finding
-    use({
+    {
         "nvim-telescope/telescope.nvim",
+	lazy = false,
         tag = "0.1.0",
-        requires = { { "nvim-lua/plenary.nvim" } },
-    })
-
-    -- File manager
-    use("lambdalisue/fern.vim")
-    use("lambdalisue/fern-hijack.vim")
-    use({
-        "lambdalisue/fern-renderer-nerdfont.vim",
-        requires = {
-            { "lambdalisue/nerdfont.vim" },
-        },
-    })
+        dependencies = { { "nvim-lua/plenary.nvim" } },
+    },
 
     -- LSP
-    use({
+    {
         "VonHeikemen/lsp-zero.nvim",
-        requires = {
+	lazy = false,
+        dependencies = {
             -- LSP Support
             { "neovim/nvim-lspconfig" },
             { "williamboman/mason.nvim" },
@@ -58,19 +57,19 @@ return require("packer").startup(function(use)
             { "saadparwaiz1/cmp_luasnip" },     -- for autocompletion
             { "rafamadriz/friendly-snippets" }, -- useful snippets
         },
-    })
+    },
 
     -- LaTeX
-    use("lervag/vimtex")
+    "lervag/vimtex",
 
     -- Commenter
-    use("numToStr/Comment.nvim")
+    "numToStr/Comment.nvim",
 
     -- Startup
-    use({
+    {
         "glepnir/dashboard-nvim",
         event = "VimEnter",
-        requires = {
+        dependencies = {
             "nvim-tree/nvim-web-devicons"
         },
         config = function()
@@ -125,20 +124,20 @@ return require("packer").startup(function(use)
                             desc_hl = 'String',
                             key = "u",
                             key_hl = 'Number',
-                            action = 'PackerSync'
+                            action = 'Lazy update'
                         },
                     },
                 }
             })
         end,
-    })
+    },
 
     -- Themes
-    use("ramojus/mellifluous.nvim")
-    use("ellisonleao/gruvbox.nvim")
-    use("alexvzyl/nordic.nvim")
-    use("sainnhe/gruvbox-material")
-    use("folke/tokyonight.nvim")
-    use({ "rose-pine/neovim", as = "rose-pine" })
-    use({ "catppuccin/nvim", as = "catppuccin" })
-end)
+    {"ramojus/mellifluous.nvim", lazy = false},
+    "ellisonleao/gruvbox.nvim",
+    "alexvzyl/nordic.nvim",
+    "sainnhe/gruvbox-material",
+    "folke/tokyonight.nvim",
+    { "rose-pine/neovim", name = "rose-pine" },
+    { "catppuccin/nvim", name = "catppuccin" },
+}, {})

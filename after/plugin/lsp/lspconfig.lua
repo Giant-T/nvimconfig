@@ -14,15 +14,6 @@ local border = {
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-    "tsserver",
-    "eslint",
-    "rust_analyzer",
-    "cssls",
-    "html",
-    "clangd",
-})
-
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -35,7 +26,7 @@ lsp.set_preferences({
     sign_icons = {},
 })
 
-lsp.setup_nvim_cmp({
+cmp.setup({
     mapping = cmp_mappings,
 })
 

@@ -1,7 +1,7 @@
 local keymap = vim.keymap
 
 -- Goto files
-keymap.set("n", "<leader>pv", "<cmd>Fern . -reveal=%<CR>")
+keymap.set("n", "<leader>pv", "<cmd>Ex<CR>")
 
 -- Splits
 keymap.set("n", "<leader>vs", "<cmd>vs<CR>")
