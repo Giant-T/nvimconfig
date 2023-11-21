@@ -20,7 +20,7 @@ treesitter.setup {
         "css",
         "html",
         "javascript",
-        "typescript",
+        -- "typescript",
         "rust",
         "cpp",
         "lua",
