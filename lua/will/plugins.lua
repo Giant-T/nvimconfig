@@ -31,7 +31,7 @@ require("lazy").setup({
     -- Fuzzy finding
     {
         "nvim-telescope/telescope.nvim",
-	lazy = false,
+        lazy = false,
         tag = "0.1.0",
         dependencies = { { "nvim-lua/plenary.nvim" } },
     },
