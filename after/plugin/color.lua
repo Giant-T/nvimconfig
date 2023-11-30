@@ -8,6 +8,7 @@
         Visual = { bg = 'rose', fg = 'base' }
     }
 }) ]]
+
 -- Classic gruvbox setup
 --[[ require("gruvbox").setup({
     bold = false,
@@ -26,6 +27,7 @@
         dark1 = "#191724",
     }
 }) ]]
+
 require 'mellifluous'.setup({
     dim_inactive = false,
 
@@ -114,6 +116,20 @@ require("nordic").setup({
     },
 })
 
+require("ayu").setup({
+     overrides = {
+        Normal = { bg = "None" },
+        ColorColumn = { bg = "None" },
+        SignColumn = { bg = "None" },
+        Folded = { bg = "None" },
+        FoldColumn = { bg = "None" },
+        CursorLine = { bg = "None" },
+        CursorColumn = { bg = "None" },
+        WhichKeyFloat = { bg = "None" },
+        VertSplit = { bg = "None" },
+    },
+})
+
 -- Grubox material setup
 function SetupGruvboxMaterial()
     vim.g.gruvbox_material_foreground = "mix"
@@ -124,7 +140,7 @@ function SetupGruvboxMaterial()
 end
 
 function SetColors(color)
-    color = color or "mellifluous"
+    color = color or "ayu"
 
     if color == "gruvbox-material" then
         SetupGruvboxMaterial()

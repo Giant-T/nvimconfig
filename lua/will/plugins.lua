@@ -138,6 +138,7 @@ require("lazy").setup({
     "alexvzyl/nordic.nvim",
     "sainnhe/gruvbox-material",
     "folke/tokyonight.nvim",
+    "Shatur/neovim-ayu",
     { "rose-pine/neovim", name = "rose-pine" },
     { "catppuccin/nvim", name = "catppuccin" },
 }, {})
