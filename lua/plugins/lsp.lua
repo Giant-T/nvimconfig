@@ -26,24 +26,11 @@ local M = {
         }
 
         lsp.preset("recommended")
-
-        local cmp = require("cmp")
-        local cmp_select = { behavior = cmp.SelectBehavior.Select }
-        local cmp_mappings = lsp.defaults.cmp_mappings({
-            ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-            ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-            ["<CR>"] = cmp.mapping.complete(),
-        })
-
         lsp.set_preferences({
             sign_icons = {},
         })
 
-        cmp.setup({
-            mapping = cmp_mappings,
-        })
-
-        function on_attach(client, bufnr)
+        function on_attach(_, bufnr)
             local opts = { buffer = bufnr, remap = false }
 
             vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(

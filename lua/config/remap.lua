@@ -29,10 +29,6 @@ keymap.set("v", "<leader>y", "\"+y")
 
 keymap.set("v", "K", "<Nop>")
 
--- Debugger
-keymap.set("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>")
-keymap.set("n", "<leader>dr", "<cmd> DapContinue <CR>")
-
 -- Format
 keymap.set("n", "<A-F>", function()
     vim.lsp.buf.format()
