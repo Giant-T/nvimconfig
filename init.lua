@@ -1,1 +1,1 @@
-require("will")
+require("config")
