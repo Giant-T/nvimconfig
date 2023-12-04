@@ -19,6 +19,7 @@ local M = {
                 Boolean = { fg = colors.lsp_parameter },
                 Number = { fg = colors.lsp_parameter },
                 FloatNumber = { fg = colors.lsp_parameter },
+                DashboardHeader = { fg = colors.string },
             }
         })
 
