@@ -1,7 +1,7 @@
 local M = {
     "theprimeagen/harpoon",
     lazy = false,
-    config = function (_, _)
+    config = function(_, _)
         local mark = require("harpoon.mark")
         local ui = require("harpoon.ui")
 

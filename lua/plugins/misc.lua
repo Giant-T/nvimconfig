@@ -1,3 +1,3 @@
 return {
-    {"lervag/vimtex", lazy = true},
+    { "lervag/vimtex", lazy = true },
 }
