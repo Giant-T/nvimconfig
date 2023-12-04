@@ -3,7 +3,7 @@ local M = {
     lazy = false,
     opts = {
         options = {
-            theme = 'ayu',
+            theme = 'gruvbox',
             component_separators = '',
             section_separators = '',
         },

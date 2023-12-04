@@ -71,12 +71,12 @@ local M = {
 
         require('mason').setup({})
         require('mason-lspconfig').setup({
-          ensure_installed = {
+            ensure_installed = {
                 "rust_analyzer",
             },
-          handlers = {
-            lsp.default_setup,
-          },
+            handlers = {
+                lsp.default_setup,
+            },
         })
 
         lsp.setup()
