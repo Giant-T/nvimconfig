@@ -20,6 +20,7 @@ local M = {
                 Number = { fg = colors.lsp_parameter },
                 FloatNumber = { fg = colors.lsp_parameter },
                 DashboardHeader = { fg = colors.string },
+                Visual = { reverse = true },
             }
         })
 
