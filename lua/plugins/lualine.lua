@@ -3,21 +3,21 @@ local M = {
     lazy = false,
     opts = {
         options = {
-            theme = 'gruvbox',
-            component_separators = '',
-            section_separators = '',
+            theme = "gruvbox",
+            component_separators = "",
+            section_separators = "",
         },
         sections = {
-            lualine_a = { 'mode' },
-            lualine_b = { 'buffers' },
-            lualine_c = { 'branch', 'diff', 'diagnostics' },
-            lualine_x = { 'encoding', 'filetype' },
-            lualine_y = { 'progress' },
-            lualine_z = { 'location' }
+            lualine_a = { "mode" },
+            lualine_b = { "buffers" },
+            lualine_c = { "branch", "diff", "diagnostics" },
+            lualine_x = { "encoding", "filetype" },
+            lualine_y = { "progress" },
+            lualine_z = { "location" }
         },
     },
     config = function(_, opts)
-        require('lualine').setup(opts)
+        require("lualine").setup(opts)
     end
 }
 

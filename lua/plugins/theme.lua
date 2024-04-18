@@ -1,32 +1,24 @@
 local M = {
-    "ramojus/mellifluous.nvim",
+    "deparr/tairiki.nvim",
     lazy = false,
-    config = function(_, _)
-        require("mellifluous").setup({
-            color_set = "mellifluous",
-            mellifluous = {
-                neutral = true,
-                bg_contrast = "hard",
-            },
-            transparent_background = {
-                enabled = true,
-                floating_windows = true,
-            },
-            plugins = {
-                telescope = {
-                    enabled = true,
-                    nvchad_like = false,
+    priority = 1000,
+    config = function()
+        require("tairiki").setup {
+            transparent = true,
+            style = "dark",
+            term_colors = true,
+            highlights = {
+                Visual = {
+                    fmt = "reverse",
                 },
-                cmp = true,
             },
-        })
+            lualine = {
+                transparent = true,
+            },
+        }
 
-        vim.cmd.colorscheme("mellifluous")
-
-        vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-        vim.api.nvim_set_hl(0, "Visual", { reverse = true })
-    end
+        require('tairiki').load()
+    end,
 }
 
 return M

@@ -1,6 +1,7 @@
 -- Global variables
 local g = vim.g
 local opt = vim.opt
+local autocmd = vim.api.nvim_create_autocmd
 
 -- Line numbers
 opt.nu = true
@@ -23,8 +24,15 @@ opt.colorcolumn = "80"
 
 -- netrw settings
 g.netrw_banner = 0
-g.netrw_liststyle = 3
+g.netrw_liststyle = 0
+g.netrw_browse_split = 0
 g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+autocmd("FileType", {
+    pattern = "netrw",
+    callback = function()
+        vim.opt_local.bufhidden = "wipe"
+    end,
+})
 
 -- General
 opt.swapfile = false
@@ -34,6 +42,15 @@ opt.termguicolors = true
 opt.scrolloff = 10
 opt.autoread = true
 g.editorconfig = true
+autocmd("TextYankPost", {
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = "Visual",
+            timeout = 40,
+        })
+    end,
+})
 
 -- UI
 opt.guicursor = ""
