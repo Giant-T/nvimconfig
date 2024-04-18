@@ -58,3 +58,4 @@ opt.laststatus = 3
 opt.showmode = false
 
 vim.o.hidden = true
+

@@ -14,8 +14,8 @@ keymap.set("n", "<leader>k", "<C-w>k")
 keymap.set("n", "<leader>l", "<C-w>l")
 
 -- Moving lines
-keymap.set("n", "<A-j>", "<cmd>m+<CR>==")
-keymap.set("n", "<A-k>", "<cmd>m-2<CR>==")
+keymap.set("n", "<A-j>", "<cmd>m+<CR>")
+keymap.set("n", "<A-k>", "<cmd>m-2<CR>")
 keymap.set("i", "<A-j>", "<cmd>m+<CR>")
 keymap.set("i", "<A-k>", "<cmd>m-2<CR>")
 
