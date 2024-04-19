@@ -6,6 +6,8 @@ local autocmd = vim.api.nvim_create_autocmd
 -- Line numbers
 opt.nu = true
 opt.relativenumber = true
+opt.cursorline = true
+opt.cursorlineopt = "number"
 
 -- Tabs
 opt.tabstop = 4

@@ -11,6 +11,9 @@ local M = {
                 Visual = {
                     fmt = "reverse",
                 },
+                CursorLineNr = {
+                    fg = "$purple",
+                },
             },
             lualine = {
                 transparent = true,
