@@ -1,26 +1,19 @@
 local M = {
-    "deparr/tairiki.nvim",
+    "mellow-theme/mellow.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-        require("tairiki").setup {
-            transparent = true,
-            style = "dark",
-            term_colors = true,
-            highlights = {
-                Visual = {
-                    fmt = "reverse",
-                },
-                CursorLineNr = {
-                    fg = "$purple",
-                },
-            },
-            lualine = {
-                transparent = true,
-            },
-        }
+        vim.g.mellow_italic_comments = false
+        vim.g.mellow_transparent = true
 
-        require('tairiki').load()
+        vim.api.nvim_create_autocmd({ "Colorscheme" }, {
+            pattern = "*",
+            callback = function()
+                vim.cmd("highlight Visual gui=reverse")
+            end,
+        })
+
+        vim.cmd.colorscheme("mellow")
     end,
 }
 
