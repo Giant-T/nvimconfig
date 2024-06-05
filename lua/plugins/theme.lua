@@ -9,7 +9,8 @@ local M = {
         vim.api.nvim_create_autocmd({ "Colorscheme" }, {
             pattern = "*",
             callback = function()
-                vim.cmd("highlight Visual gui=reverse")
+                vim.api.nvim_set_hl(0, "Visual", { reverse = true })
+                vim.api.nvim_set_hl(0, "Function", { fg = "#F5A191" })
             end,
         })
 
