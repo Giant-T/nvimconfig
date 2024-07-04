@@ -50,7 +50,7 @@ local M = {
             keymap.set("n", "K", vim.lsp.buf.hover, opts)
             keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
             keymap.set("n", "<leader>va", vim.lsp.buf.code_action, opts)
-            keymap.set("n", "<leader>vr", vim.lsp.buf.references , opts)
+            keymap.set("n", "<leader>vr", require("telescope.builtin").lsp_references, opts)
             keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
             keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
             keymap.set("n", "<C-F>", "<cmd>LspZeroFormat<CR>")

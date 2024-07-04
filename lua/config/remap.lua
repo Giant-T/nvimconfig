@@ -29,6 +29,10 @@ keymap.set("v", "<leader>y", "\"+y")
 
 keymap.set("v", "K", "<Nop>")
 
+-- Quickfix
+keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
+keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
+
 -- Format
 keymap.set("n", "<A-F>", function()
     vim.lsp.buf.format()
