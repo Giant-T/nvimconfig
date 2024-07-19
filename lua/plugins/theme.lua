@@ -1,20 +1,26 @@
 local M = {
-    "mellow-theme/mellow.nvim",
+    -- "mellow-theme/mellow.nvim",
+    "ellisonleao/gruvbox.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-        vim.g.mellow_italic_comments = false
-        vim.g.mellow_transparent = true
-
-        vim.api.nvim_create_autocmd({ "Colorscheme" }, {
-            pattern = "*",
-            callback = function()
-                vim.api.nvim_set_hl(0, "Visual", { reverse = true })
-                vim.api.nvim_set_hl(0, "Function", { fg = "#F5A191" })
-            end,
+        require("gruvbox").setup({
+            terminal_colors = true,
+            contrast = "soft",
+            invert_selection = true,
+            inverse = true,
+            transparent_mode = true,
+            bold = false,
+            italic = {
+                strings = false,
+                comments = false,
+            },
+            overrides = {
+                ["@type"] = { link = "GruvboxOrange" },
+            },
         })
 
-        vim.cmd.colorscheme("mellow")
+        vim.cmd.colorscheme("gruvbox")
     end,
 }
 
