@@ -25,11 +25,6 @@ local M = {
             "│",
         }
 
-        lsp.preset("recommended")
-        lsp.set_preferences({
-            sign_icons = {},
-        })
-
         function on_attach(_, bufnr)
             local opts = { buffer = bufnr, remap = false }
 
@@ -56,7 +51,10 @@ local M = {
             keymap.set("n", "<C-F>", "<cmd>LspZeroFormat<CR>")
         end
 
-        lsp.on_attach(on_attach)
+        lsp.extend_lspconfig({
+            capabilities = require('cmp_nvim_lsp').default_capabilities(),
+            lsp_attach = on_attach,
+        })
 
         require('mason').setup({})
         require('mason-lspconfig').setup({
@@ -67,10 +65,7 @@ local M = {
                 lsp.default_setup,
             },
         })
-
-        lsp.setup()
     end,
 }
-
 
 return M
