@@ -15,6 +15,7 @@ local M = {
         local lsp = require("lsp-zero")
 
         function on_attach(_, bufnr)
+            lsp.default_keymaps({buffer = bufnr})
         end
 
         lsp.extend_lspconfig({

@@ -62,6 +62,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     )
 
     keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
     keymap.set("n", "K", vim.lsp.buf.hover, opts)
     keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
     keymap.set("n", "<leader>va", vim.lsp.buf.code_action, opts)
