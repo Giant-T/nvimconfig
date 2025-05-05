@@ -34,46 +34,36 @@ keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
 keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 
 vim.api.nvim_create_autocmd('LspAttach', {
-  desc = 'LSP actions',
-  callback = function(event)
-    local border = {
-        "⁕",
-        "─",
-        "⁕",
-        "│",
-        "⁕",
-        "─",
-        "⁕",
-        "│",
-    }
-    local opts = { buffer = event.buf, remap = false }
+    desc = 'LSP actions',
+    callback = function(event)
+        local border = { "⁕", "─", "⁕", "│", "⁕", "─", "⁕", "│" }
 
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover,
-        {
-            border = border,
-        }
-    )
-    vim.lsp.handlers["textDocument/signature_help"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help,
-        {
-            border = border,
-        }
-    )
+        vim.diagnostic.config({
+            virtual_text = {
+                prefix = "- ",
+            },
+            float = { border = border },
+        })
 
-    keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
-    keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-    keymap.set("n", "<leader>va", vim.lsp.buf.code_action, opts)
-    keymap.set("n", "<leader>vr", require("telescope.builtin").lsp_references, opts)
-    keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-    keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    keymap.set("n", "<C-F>", "<cmd>LspZeroFormat<CR>")
+        local opts = { buffer = event.buf, remap = false }
 
-    -- Format
-    keymap.set("n", "<A-F>", function()
-        vim.lsp.buf.format()
-    end)
-  end,
+        keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+        keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
+        keymap.set("n", "K", function()
+            vim.lsp.buf.hover { border = border }
+        end, opts)
+        keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
+        keymap.set("n", "<leader>va", vim.lsp.buf.code_action, opts)
+        keymap.set("n", "<leader>vr", require("telescope.builtin").lsp_references, opts)
+        keymap.set("i", "<C-h>", function()
+            vim.lsp.buf.signature_help { border = border }
+        end, opts)
+        keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+        keymap.set("n", "<C-F>", "<cmd>LspZeroFormat<CR>")
+
+        -- Format
+        keymap.set("n", "<A-F>", function()
+            vim.lsp.buf.format()
+        end)
+    end,
 })
