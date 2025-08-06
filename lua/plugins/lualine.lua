@@ -1,4 +1,4 @@
-local M = {
+return {
     "nvim-lualine/lualine.nvim",
     lazy = false,
     opts = {
@@ -20,5 +20,3 @@ local M = {
         require("lualine").setup(opts)
     end
 }
-
-return M

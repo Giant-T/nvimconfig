@@ -15,6 +15,7 @@ local M = {
             "css",
             "html",
             "javascript",
+            "c",
             "rust",
             "cpp",
             "lua",
