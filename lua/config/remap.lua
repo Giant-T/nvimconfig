@@ -39,10 +39,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local opts = { buffer = event.buf, remap = false }
 
         keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        keymap.set('n', 'go', vim.lsp.buf.type_definition, opts)
-        keymap.set("n", "K", vim.lsp.buf.hover, opts)
-        keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-        keymap.set("n", "<leader>va", vim.lsp.buf.code_action, opts)
+        keymap.set("n", "grt", vim.lsp.buf.type_definition, opts)
         keymap.set("n", "grr", function()
             require("telescope.builtin").lsp_references(
                 require("telescope.themes").get_cursor({})
@@ -50,6 +47,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end, opts)
 
         -- Format
-        keymap.set("n", "<A-F>", vim.lsp.buf.format)
+        keymap.set("n", "grf", vim.lsp.buf.format)
     end,
 })
