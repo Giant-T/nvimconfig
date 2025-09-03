@@ -1,4 +1,3 @@
--- Global variables
 local g = vim.g
 local opt = vim.opt
 local autocmd = vim.api.nvim_create_autocmd
@@ -61,3 +60,10 @@ opt.showmode = false
 opt.hidden = true
 opt.winborder = "rounded"
 
+
+autocmd("LspAttach", {
+    callback = function(ev)
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        client.server_capabilities.semanticTokensProvider = nil
+    end,
+})

@@ -1,4 +1,5 @@
 local keymap = vim.keymap
+local autocmd = vim.api.nvim_create_autocmd
 
 -- Goto files
 keymap.set("n", "<leader>pv", "<cmd>Ex<CR>")
@@ -27,7 +28,7 @@ keymap.set("v", "K", "<Nop>")
 keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
 keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 
-vim.api.nvim_create_autocmd('LspAttach', {
+autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function(event)
         vim.diagnostic.config({
@@ -40,11 +41,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         keymap.set("n", "gd", vim.lsp.buf.definition, opts)
         keymap.set("n", "grt", vim.lsp.buf.type_definition, opts)
-        keymap.set("n", "grr", function()
-            require("telescope.builtin").lsp_references(
-                require("telescope.themes").get_cursor({})
-            )
-        end, opts)
 
         -- Format
         keymap.set("n", "grf", vim.lsp.buf.format)
