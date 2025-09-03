@@ -1,20 +1,5 @@
 local M = {
     {
-        "cdmill/neomodern.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require("neomodern").setup({
-                theme = "hojicha",
-                variant = "dark",
-                transparent = true,
-                plain_float = true,
-            })
-            -- require("neomodern").load()
-            -- vim.api.nvim_set_hl(0, "Visual", { reverse = true })
-        end,
-    },
-    {
         "mellow-theme/mellow.nvim",
         lazy = false,
         priority = 1000,
@@ -26,34 +11,6 @@ local M = {
             }
 
             -- vim.cmd.colorscheme("mellow")
-        end,
-    },
-    {
-        "rebelot/kanagawa.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require("kanagawa").setup({
-                transparent = true,
-                keywordStyle = { italic = false },
-                colors = {
-                    theme = {
-                        all = {
-                            ui = {
-                                bg_gutter = "none",
-                            },
-                        },
-                    },
-                },
-                overrides = function()
-                    return {
-                        Visual = { reverse = true },
-                        TelescopeBorder = { bg = "none" },
-                    }
-                end,
-            })
-
-            -- vim.cmd.colorscheme("kanagawa")
         end,
     },
     {
