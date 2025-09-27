@@ -7,6 +7,11 @@ return {
                 'clangd',
             },
         }
-        vim.lsp.enable({ "clangd", "rust_analyzer", "nixd", "tinymist", "lua_ls" })
+
+        vim.lsp.config.ts_ls = {
+
+        }
+
+        vim.lsp.enable({ "clangd", "ts_ls", "eslint", "omnisharp", "rust_analyzer", "nixd", "tinymist", "lua_ls" })
     end,
 }

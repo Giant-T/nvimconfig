@@ -30,6 +30,8 @@ local M = {
 
             vim.cmd.colorscheme("vague")
             vim.api.nvim_set_hl(0, "Visual", { reverse = true })
+            vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = nil })
+            vim.api.nvim_set_hl(0, "Pmenu", { bg = nil })
         end,
     },
 }
