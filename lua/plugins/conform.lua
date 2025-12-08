@@ -7,6 +7,7 @@ return {
                 javascript = { "prettier" },
                 typescript = { "prettier" },
                 typescriptreact = { "prettier" },
+                css = { "prettier" },
             },
             format_on_save = {
                 timeout_ms = 500,

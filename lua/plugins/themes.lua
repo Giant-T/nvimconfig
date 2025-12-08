@@ -34,6 +34,40 @@ local M = {
             vim.api.nvim_set_hl(0, "Pmenu", { bg = nil })
         end,
     },
+    {
+        "ellisonleao/gruvbox.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("gruvbox").setup({
+                terminal_colors = true,
+                contrast = "soft",
+                invert_selection = true,
+                inverse = true,
+                transparent_mode = true,
+                overrides = {
+                    ["@type"] = { link = "GruvboxOrange" },
+                },
+            })
+
+            -- vim.cmd.colorscheme("gruvbox")
+            -- vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = nil })
+        end,
+    },
+    {
+        "Tsuzat/NeoSolarized.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("NeoSolarized").setup({
+                style = "dark",
+                transparent = true,
+            })
+
+            -- vim.cmd.colorscheme("NeoSolarized")
+            -- vim.api.nvim_set_hl(0, "Visual", { reverse = true })
+        end,
+    }
 }
 
 return M
